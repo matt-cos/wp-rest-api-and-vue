@@ -6,19 +6,21 @@
 </template>
 
 <script>
-//src\components\Param.vue
+// src\components\Param.vue
 export default {
-    name: 'Param',
-    data () {
-        return {
-        UserInput :''
-        }
-
-    },
-    methods:{
-        GoToRoute : function(){
-        this.$router.push({ name: 'Paramdetails', params: { id: this.UserInput }})
-        }
+  name: 'Param',
+  data () {
+    return {
+      UserInput: ''
     }
+  },
+  methods: {
+    GoToRoute: function () {
+      this.$router.push({
+        name: 'Paramdetails',
+        params: { id: this.UserInput }
+      })
+    }
+  }
 }
 </script>

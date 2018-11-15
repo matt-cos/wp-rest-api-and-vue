@@ -1,27 +1,36 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-//import the vue instance
+
+// import the vue instance
 import Vue from 'vue'
-//import the App component
+
+// import the App component
 import App from './App'
-//import the vue router
+
+// import the vue router and axios
 import VueRouter from 'vue-router'
 import axios from 'axios'
-//tell vue to use the router
-Vue.use(VueRouter, axios)
-//import the hello component
-import Hello from './components/HelloWorld'
-//import the about component
-import About from './components/About'
+
+// import the components
+import Home from './components/Home'
 import Projects from './components/Projects'
+import About from './components/About'
+import Contact from './components/Contact'
+import Blog from './components/Blog'
 import Param from './components/Param'
-//define your routes
+
+// tell vue to use the router
+Vue.use(VueRouter, axios)
+
+// define your routes
 const routes = [
-	//define the root url of the application.
-	{ path: '/', component: Hello },
-	{ path: '/about', component: About },
-	{ path: '/projects', component: Projects },
-	{ path: '/param', component: Param }
+  // define the root url of the application.
+  { path: '/', component: Home },
+  { path: '/projects', component: Projects },
+  { path: '/about', component: About },
+  { path: '/contact', component: Contact },
+  { path: '/blog', component: Blog },
+  { path: '/param', component: Param }
 ]
 
 // Create the router instance and pass the `routes` option
@@ -31,14 +40,15 @@ const router = new VueRouter({
   routes, // short for routes: routes
   mode: 'history'
 })
-//instatinat the vue instance
-const test = new Vue({
-//define the selector for the root component
+
+// instantiate the vue instance
+new Vue({
+// define the selector for the root component
   el: '#app',
-  //pass the template to the root component
+  // pass the template to the root component
   template: '<App/>',
-  //declare components that the root component can access
+  // declare components that the root component can access
   components: { App },
-  //pass in the router to the Vue instance
+  // pass in the router to the Vue instance
   router
-}).$mount('#app')//mount the router on the app
+}).$mount('#app') // mount the router on the app

@@ -3,7 +3,6 @@
     <h1>projects</h1>
     <p>When you have a great story about how your product or service was built to change lives, share it. The "About Us" page is a great place for it to live, too. Good stories humanize your brand, providing context and meaning for your product. What’s more, good stories are sticky -- which means people are more likely to connect with them and pass them on.</p>
 
-
     <section v-if="errored">
       <p>We're sorry, we're not able to retrieve this information at the moment, please try back later</p>
     </section>
@@ -25,12 +24,11 @@
 
     <small>{{ info }}</small>
 
-
   </div>
 </template>
 
 <script>
-import axios from 'axios';
+import axios from 'axios'
 
 export default {
   name: 'projects',
@@ -58,9 +56,8 @@ export default {
       })
       .finally(() => this.loading = false)
   }
-  //     // https://vuejs.org/v2/cookbook/using-axios-to-consume-apis.html
+  // https://vuejs.org/v2/cookbook/using-axios-to-consume-apis.html
 }
-
 
 </script>
 <!-- styling for the component -->
