@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-    <router-link v-bind:to="'/'">Matt Cos</router-link>
-    <router-link v-bind:to="'/projects'">Projects</router-link>
-    <router-link v-bind:to="'/about'">About</router-link>
-    <router-link v-bind:to="'/contact'">Contact</router-link>
-    <router-link v-bind:to="'/blog'">Blog</router-link>
+    <nav>
+      <router-link v-bind:to="'/'">Matt Cos</router-link>
+      <router-link v-bind:to="'/projects'">Projects</router-link>
+      <router-link v-bind:to="'/about'">About</router-link>
+      <router-link v-bind:to="'/contact'">Contact</router-link>
+      <router-link v-bind:to="'/blog'">Blog</router-link>
+    </nav>
     <!-- <router-link v-bind:to="'/param'">Param</router-link> -->
     <!-- the router outlet, where all matched components would ber viewed -->
     <router-view></router-view>
+
+    <h1>footer</h1>
   </div>
 </template>
 

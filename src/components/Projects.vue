@@ -1,7 +1,6 @@
 <template>
   <div id="projects">
-    <h1>projects</h1>
-    <p>When you have a great story about how your product or service was built to change lives, share it. The "About Us" page is a great place for it to live, too. Good stories humanize your brand, providing context and meaning for your product. What’s more, good stories are sticky -- which means people are more likely to connect with them and pass them on.</p>
+    <h1>Projects</h1>
 
     <section v-if="errored">
       <p>We're sorry, we're not able to retrieve this information at the moment, please try back later</p>
@@ -14,15 +13,13 @@
         v-else
         v-for="post in info"
       >
-        {{ post.id }}
-
-        <!-- {{ post._embedded['wp:featuredmedia']['0'].source_url }} -->
+        <p>{{ post.title.rendered }}</p>
         <img :src="post._embedded['wp:featuredmedia']['0'].source_url" :alt="post._embedded['wp:featuredmedia']['0'].alt_text">
       </div>
 
     </section>
 
-    <small>{{ info }}</small>
+    <!-- <small>{{ info }}</small> -->
 
   </div>
 </template>

@@ -1,12 +1,14 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ headline }}</h1>
+    <p>{{ headlineCopy }}</p>
 
     <section v-if="errored">
       <p>We're sorry, we're not able to retrieve this information at the moment, please try back later</p>
     </section>
 
     <section v-else>
+      <h2>Recent Work</h2>
       <div v-if="loading_section_1">Loading...</div>
 
       <div
@@ -14,16 +16,17 @@
         v-for="post in info.slice(0, 6)"
       >
       <!-- slice limits it to 6 posts -->
-
-        {{ post.id }}
-
-        <!-- {{ post._embedded['wp:featuredmedia']['0'].source_url }} -->
+        <p>{{ post.title.rendered }}</p>
         <img :src="post._embedded['wp:featuredmedia']['0'].source_url" :alt="post._embedded['wp:featuredmedia']['0'].alt_text">
       </div>
 
-    </section>
+      <h2>Services</h2>
 
-    <small>{{ info }}</small>
+      <h2>Clients</h2>
+
+      <h2>Let's Get in Touch</h2>
+
+    </section>
   </div>
 </template>
 
@@ -34,7 +37,8 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
+      headline: 'Intro Text Headline',
+      headlineCopy: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, voluptates.',
       info: null,
       loading_section_1: true,
       errored: false
