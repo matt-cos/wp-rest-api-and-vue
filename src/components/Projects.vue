@@ -1,23 +1,50 @@
 <template>
   <div id="projects">
-    <h1>Projects</h1>
+    <div class="row">
+      <div class="column column-75 column-offset-25">
+        <h1>Projects</h1>
+      </div>
+    </div>
 
-    <section v-if="errored">
+   <!--  <section v-if="errored">
       <p>We're sorry, we're not able to retrieve this information at the moment, please try back later</p>
     </section>
 
     <section v-else>
       <div v-if="loading">Loading...</div>
 
-      <div
-        v-else
-        v-for="post in info"
-      >
+      <div v-else v-for="post in info">
         <p>{{ post.title.rendered }}</p>
         <img :src="post._embedded['wp:featuredmedia']['0'].source_url" :alt="post._embedded['wp:featuredmedia']['0'].alt_text">
       </div>
 
-    </section>
+    </section> -->
+
+     <div v-if="errored">
+      <div class="row">
+        <div class="column column-75 column-offset-25">
+          <p>We're sorry, we're not able to retrieve this information at the moment, please try back later</p>
+        </div>
+      </div>
+    </div>
+
+    <div v-else class="row recent">
+      <div class="column column-75 column-offset-25">
+        <h2>Recent Work</h2>
+        <div v-if="loading">
+          <div class="row">
+            <div class="column">
+              <div>Loading...</div>
+            </div>
+          </div>
+        </div>
+
+        <div v-else v-for="post in info">
+          <p>{{ post.title.rendered }}</p>
+          <img :src="post._embedded['wp:featuredmedia']['0'].source_url" :alt="post._embedded['wp:featuredmedia']['0'].alt_text">
+        </div>
+      </div>
+    </div>
 
     <!-- <small>{{ info }}</small> -->
 
@@ -60,11 +87,11 @@ export default {
 <!-- styling for the component -->
 <style>
 #projects {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  /*font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 60px;*/
 }
 </style>

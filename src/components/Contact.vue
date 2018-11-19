@@ -1,6 +1,8 @@
 <template>
-  <div id="contact">
-    <h1>CONTACT</h1>
+  <div id="contact" class="row">
+    <div class="column column-75 column-offset-25">
+      <h1>Contact</h1>
+    </div>
   </div>
 </template>
 
@@ -12,11 +14,11 @@ export default {
 <!-- styling for the component -->
 <style>
 #contact {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  /*font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 60px;*/
 }
 </style>
