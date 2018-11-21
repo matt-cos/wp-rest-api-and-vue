@@ -14,6 +14,7 @@ import axios from 'axios'
 // import the components
 import Home from './components/Home'
 import Projects from './components/Projects'
+import ProjectSingle from './components/ProjectSingle'
 import About from './components/About'
 import Contact from './components/Contact'
 import Blog from './components/Blog'
@@ -27,6 +28,7 @@ const routes = [
   // define the root url of the application.
   { path: '/', component: Home },
   { path: '/projects', component: Projects },
+  { path: '/projects/:id', component: ProjectSingle },
   { path: '/about', component: About },
   { path: '/contact', component: Contact },
   { path: '/blog', component: Blog },
