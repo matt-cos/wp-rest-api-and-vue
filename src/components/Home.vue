@@ -99,7 +99,8 @@ export default {
   },
   mounted () {
     axios
-      .get('https://bmwmovement.org/wp-json/wp/v2/posts?_embed')
+      // .get('https://bmwmovement.org/wp-json/wp/v2/posts?_embed')
+      .get('https://bmwmovement.org/wp-json/wp/v2/posts?_embed&filter[posts_per_page]=6') // limits call to 6
       .then(response => {
         this.info = response.data
       })
