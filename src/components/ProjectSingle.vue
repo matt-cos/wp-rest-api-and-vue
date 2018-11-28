@@ -16,7 +16,7 @@
 
     <div v-else class="row recent">
       <div class="column column-75 column-offset-25">
-        <h2>{{ $route.params.id }}</h2>
+        <!-- <h2>{{ info[0].title.rendered }}</h2> -->
         <div v-if="loading">
           <div class="row">
             <div class="column">
@@ -26,12 +26,15 @@
         </div>
 
         <div v-else>
-          <h3>{{ $route.params.id }}</h3>
+          <!-- <h3>{{ $route.params.id }}</h3> -->
         </div>
       </div>
     </div>
 
-    <!-- <small>{{ info }}</small> -->
+    <a :href="pthhh"><small>{{ pthhh }}</small></a>
+    <br>
+    <br>
+    <small>{{ info }}</small>
 
   </div>
 </template>
@@ -39,13 +42,18 @@
 <script>
 import axios from 'axios'
 
+// var pathName = window.location.pathname.replace('/projects/','https://bmwmovement.org/wp-json/wp/v2/posts?slug=');
+// var pathName = window.location.pathname.replace('/projects/','https://bmwmovement.org/wp-json/wp/v2/posts?_embed&slug=');
+var pathName = 'https://bmwmovement.org/wp-json/wp/v2/posts?slug=the-bmw-group-is-working-to-achieve-sustainable-development-goals&_embed';
+
 export default {
   name: 'projectsingle',
   data () {
     return {
       info: null,
       loading: true,
-      errored: false
+      errored: false,
+      pthhh: pathName
     }
   },
   filters: {
@@ -55,7 +63,7 @@ export default {
   },
   mounted () {
     axios
-      .get('https://bmwmovement.org/wp-json/wp/v2/posts?_embed')
+      .get(pathName)
       .then(response => {
         this.info = response.data
       })

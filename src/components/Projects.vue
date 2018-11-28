@@ -40,13 +40,15 @@
         </div>
 
         <div v-else v-for="post in info">
-          <p>{{ post.title.rendered }}</p>
+          <a :href="'/projects/' + post.slug">
+            <p>{{ post.title.rendered }}</p>
+          </a>
           <img :src="post._embedded['wp:featuredmedia']['0'].source_url" :alt="post._embedded['wp:featuredmedia']['0'].alt_text">
         </div>
       </div>
     </div>
 
-    <!-- <small>{{ info }}</small> -->
+    <small>{{ info }}</small>
 
   </div>
 </template>

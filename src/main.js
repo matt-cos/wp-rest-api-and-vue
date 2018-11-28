@@ -28,7 +28,7 @@ const routes = [
   // define the root url of the application.
   { path: '/', component: Home },
   { path: '/projects', component: Projects },
-  { path: '/projects/:id', component: ProjectSingle },
+  { path: '/projects/:id', component: ProjectSingle, props: true },
   { path: '/about', component: About },
   { path: '/contact', component: Contact },
   { path: '/blog', component: Blog },
