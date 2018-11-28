@@ -1,10 +1,5 @@
 <template>
   <div id="project-single">
-    <div class="row">
-      <div class="column column-75 column-offset-25">
-        <h1>Project Single</h1>
-      </div>
-    </div>
 
      <div v-if="errored">
       <div class="row">
@@ -16,7 +11,6 @@
 
     <div v-else class="row recent">
       <div class="column column-75 column-offset-25">
-        <!-- <h2>{{ info[0].title.rendered }}</h2> -->
         <div v-if="loading">
           <div class="row">
             <div class="column">
@@ -26,15 +20,19 @@
         </div>
 
         <div v-else>
-          <!-- <h3>{{ $route.params.id }}</h3> -->
+          <h1>{{ info[0].title.rendered }}</h1>
+          <!-- <img :src="info[0]._embedded['wp:featuredmedia']['0'].source_url" :alt="post._embedded['wp:featuredmedia']['0'].alt_text"> -->
+          <!-- alt text was causing issues -->
+          <img :src="info[0]._embedded['wp:featuredmedia']['0'].source_url">
+          <div v-html="info[0].content.rendered"></div>
         </div>
       </div>
     </div>
 
-    <a :href="pthhh"><small>{{ pthhh }}</small></a>
+    <!-- <a :href="pthhh"><small>{{ pthhh }}</small></a>
     <br>
     <br>
-    <small>{{ info }}</small>
+    <small>{{ info }}</small> -->
 
   </div>
 </template>
@@ -43,8 +41,7 @@
 import axios from 'axios'
 
 // var pathName = window.location.pathname.replace('/projects/','https://bmwmovement.org/wp-json/wp/v2/posts?slug=');
-// var pathName = window.location.pathname.replace('/projects/','https://bmwmovement.org/wp-json/wp/v2/posts?_embed&slug=');
-var pathName = 'https://bmwmovement.org/wp-json/wp/v2/posts?slug=the-bmw-group-is-working-to-achieve-sustainable-development-goals&_embed';
+var pathName = window.location.pathname.replace('/projects/','https://bmwmovement.org/wp-json/wp/v2/posts?_embed&slug=');
 
 export default {
   name: 'projectsingle',
