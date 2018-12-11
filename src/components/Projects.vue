@@ -27,10 +27,10 @@
         </div>
       </div>
     </div>
-
     <div v-else class="row recent">
       <div class="column column-75 column-offset-25">
         <h2>Recent Work</h2>
+
         <div v-if="loading">
           <div class="row">
             <div class="column">
@@ -38,13 +38,25 @@
             </div>
           </div>
         </div>
-
-        <div v-else v-for="post in info">
+        <!-- <div v-else v-for="post in info">
           <a :href="'/projects/' + post.slug">
-            <p>{{ post.title.rendered }}</p>
+            <p>{{ post.title.rendered }} {{info.length }}</p>
           </a>
           <img :src="post._embedded['wp:featuredmedia']['0'].source_url" :alt="post._embedded['wp:featuredmedia']['0'].alt_text">
+        </div> -->
+        <div v-else>
+          <div class="row">
+            <!-- <div v-for="(post, index) in info.slice(0, 3)" class="column column-33"> -->
+            <!-- https://jsfiddle.net/z11fe07p/421/ -->
+            <div v-for="(post, index) in info" class="column column-33">
+              <a :href="'/projects/' + post.slug">
+                <p>{{ post.title.rendered }} {{ index + 1 }} </p>
+              </a>
+              <img :src="post._embedded['wp:featuredmedia']['0'].source_url" :alt="post._embedded['wp:featuredmedia']['0'].alt_text">
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
 

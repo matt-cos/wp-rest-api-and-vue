@@ -20,8 +20,31 @@
         <h2>Recent Work</h2>
         <div v-if="loading_section_1">
           <div class="row">
-            <div class="column">
-              <div>Loading...</div>
+            <div class="column column-33">
+              <p>Loading...</p>
+              <img src="" alt="Placeholder">
+            </div>
+            <div class="column column-33">
+              <p>Loading...</p>
+              <img src="" alt="Placeholder">
+            </div>
+            <div class="column column-33">
+              <p>Loading...</p>
+              <img src="" alt="Placeholder">
+            </div>
+          </div>
+          <div class="row">
+            <div class="column column-33">
+              <p>Loading...</p>
+              <img src="" alt="Placeholder">
+            </div>
+            <div class="column column-33">
+              <p>Loading...</p>
+              <img src="" alt="Placeholder">
+            </div>
+            <div class="column column-33">
+              <p>Loading...</p>
+              <img src="" alt="Placeholder">
             </div>
           </div>
         </div>
